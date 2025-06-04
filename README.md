@@ -50,3 +50,9 @@ await fs.deleteDirectory("folder"); // delete directory
 await fs.deleteDirectory("folder/subfolder2"); // delete subfolder 
 await fs.deleteDirectory("folder", true); // delete directory with recursive
 ```
+
+# TODO:
+1. add functions:
+   getFileSize, getFileSync, clear, open, close
+2. update copy, move
+3. chunk
