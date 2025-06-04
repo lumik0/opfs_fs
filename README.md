@@ -36,7 +36,14 @@ await fs.isFile("test"); // Error (not exists)
 await fs.isFile("folder"); // false 
 await fs.isFile("folder/subfolder"); // false 
 await fs.isDirectory("folder"); // true
-await fs.isDirectory("folder/subfolder"); // true 
+await fs.isDirectory("folder/subfolder"); // true
+
+await fs.exists("file"); // true
+await fs.exists("folder") // true
+await fs.listDir("folder") // ["subfolder","subfolder2"]
+await fs.rename("file","file2")
+await fs.copyFile("file2","file")
+await fs.move("file2","folder/")
 
 await fs.deleteFile("file"); // delete file
 await fs.deleteDirectory("folder"); // delete directory
