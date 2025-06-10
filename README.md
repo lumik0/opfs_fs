@@ -3,7 +3,7 @@
 OPFS: https://developer.mozilla.org/en-US/docs/Web/API/File_System_API/Origin_private_file_system
 
 # Example:
-(JavaScript) - OLD VERSION
+(JavaScript) - OLD VERSION (will be removed)
 ```js
 await fs.createFile("file"); // create file
 await fs.writeFile("file", "data"); // write file if the file does not exist, it creates it automatically
@@ -40,19 +40,26 @@ await fs.isDirectory("folder/subfolder"); // true
 
 await fs.exists("file"); // true
 await fs.exists("folder") // true
+await fs.existsFile("folder") // false
+await fs.existsDirectory("folder") // true
 await fs.listDir("folder") // ["subfolder","subfolder2"]
-await fs.rename("file","file2")
+await fs.renameFile("file","file2")
+await fs.renameDirectory("folder","folder2")
 await fs.copyFile("file2","file")
+await fs.copyDirectory("folder2","folder")
 await fs.move("file2","folder/")
 
 await fs.deleteFile("file"); // delete file
 await fs.deleteDirectory("folder"); // delete directory
 await fs.deleteDirectory("folder/subfolder2"); // delete subfolder 
 await fs.deleteDirectory("folder", true); // delete directory with recursive
+await fs.open("file")
+await fs.close()
 ```
 
 # TODO:
 1. add functions:
-   getFileSize, getFileSync, clear, open, close
+   getFileSize, getFileSync, getFolderSize, open, close
 2. update copy, move
 3. chunk
+4. permissions
